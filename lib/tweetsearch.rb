@@ -2,6 +2,8 @@ require 'rubygems'
 require 'bundler/setup'
 require 'twitter'
 
+
+
 module TweetSearch
   
   # Takes user input and searches through Twitter API for a tweet .
@@ -27,16 +29,16 @@ module TweetSearch
     # Returns the matching Twitter::Tweet.
     def fetch_tweet
       client = Twitter::Client.new.configure do |config|
-        config.consumer_key = ENV['CONSUMER_KEY']
-        config.consumer_secret = ENV['CONSUMER_SECRET']
-        config.oauth_token = ENV['OAUTH_TOKEN']
-        config.oauth_token_secret = ENV['OAUTH_TOKEN_SECRET']
+        config.consumer_key = 'XRg9PqnbfWKYd1K2xOYBCg'
+        config.consumer_secret = "Oe8up8w0fBduGbgDLsDIPdez5N6H6kgpcRDtmDGFVIM"
+        config.oauth_token = "1726263169-ypTWjAYYPJt7oBaaeRUKpK6kBOWUHRHL8KbxDar"
+        config.oauth_token_secret = "Yw93cTYmpPYiyASH58RdeaJtmnJANFMQ5xCxdA0YTK0"
       end
 
       # From https://github.com/sferik/twitter#configuration
       # 
       # searches through Twitter client to find the word from html form. Will only return the first tweet.
-      @tweet = client.search(@word, :count => 1)
+      @tweet = client.search(@word, :count => 1).results.first.text
     end
 
     # Choose an appropriate word from the tweet.
@@ -57,7 +59,7 @@ module TweetSearch
     # 
     # Returns an Array of words more than 4 characters that only contain letters.
     def sanitized_words
-      @words = @tweet.text.split(" ")
+      @words = @tweet.split(" ")
 
       remove_short_words
       remove_non_alpha_words
