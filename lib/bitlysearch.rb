@@ -14,14 +14,13 @@ module BitlySearch
 
     # Use the provided gif image url returned from giphy API to generate bitly url. 
     def shorten_url
-    
-
+      # client = Bitly.client
       Bitly.configure do |config|
         config.api_version = 3
         config.login = ENV['USERNAME']
         config.api_key = ENV ['KEY']
       end
-      bitly.shorten(@url)      
+      @short_url = bitly.shorten(@url)      
     end
   end
 end
