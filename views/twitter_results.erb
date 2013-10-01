@@ -38,52 +38,56 @@
 		</div>
 
 		<div class="title">
-			<h1>Tweet-o-Phone</h1>
+			<h3>Tweet-o-Phone</h3>
 		</div>
 
 <!--content area-->		
 		<div class="middle_text">
-			<br>
-			<h3>Results</h3>
 
-		<h5>You Found this Tweet</h5>
-		<blockquote class="twitter-tweet">
-			 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"></a>
-		</blockquote>
-		<div class="tree">
-		<div><h5>Tweet-o-Phone Picked this word from that tweet: <h1> <strong>"<%= @twitter_word %>"</h1></strong></h5></div>
-	</div>
-		
+			<div class="tree">
+				<h3>Results</h3>
+				<h5>You Found this Tweet</h5>
+			<blockquote class="twitter-tweet">
+				 <a href="https://twitter.com/twitterapi/status/<%=@tweet_id%>"></a>
+			
+			</blockquote>
+				<div id="tweet-word" style="color: black">
+					<h5>Tweet-o-Phone Picked this word from that tweet: <h3> <strong>"<%= @twitter_word %>"</h3></strong></h5>
+				</div>
+			
+			</div>
 		</div>
 
-		<h5>Tweet-o-phone found this gif of the word "<%= @twitter_word %>"</h5>
+
 		<div class="circles">
 		
-			<form action="http://tweet-o-phone.herokuapp.com/">
+			<form action="http://agile-hollows-6834.herokuapp.com/">
 				<button class="play_again" type="submit">Play Again</button>
 			</form>
-		
+			
 			<div class="result_page">
-				<div class="results">
-					<% if @check_result %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 500px">			
-					<% else %>
-						<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 500px">
-					<% end %>
-		
+				
+				<div class="movie_box">
+						<div class="results">
+							<% if @check_result %>
+								<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 100%; max-height: 350px;">			
+							<% else %>
+								<img src = "http://media.giphy.com/media/<%=@giphy_id%>/giphy.gif" style="max-width: 100%; max-height: 350px;">
+							<% end %>
+						</div>
 
 				</div>
 
 			</div>
 			
 		</div>
-		
-			<blockquote>
-				
-				<a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272" height="250px" data-chrome="transparent" >Tweets by @Tweet_o_Phone</a>
-			</blockquote>
-
+		<blockquote class="timeline">
+				<a class="twitter-timeline" href="https://twitter.com/Tweet_o_Phone" data-widget-id="383671652375990272" width="150px" height="300px" data-chrome="transparent" >Tweets by @Tweet_o_Phone</a>
+		</blockquote>
+			
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			
+
 
 <!--Bottom decoration circles -->
 			<div class="container_2">

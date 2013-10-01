@@ -7,11 +7,11 @@ require 'giphy'
 require 'json'
 require 'net/http'
 require 'pry'
-require 'bitly'
+
 
 require_relative 'lib/tweetsearch.rb'
 require_relative 'lib/giphysearch'
-require_relative 'lib/bitlysearch.rb'
+
 
 get '/' do 
   erb :index
