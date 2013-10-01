@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'twitter'
 require 'json'
-require 'pry'
+
 
 
 module TweetSearch
