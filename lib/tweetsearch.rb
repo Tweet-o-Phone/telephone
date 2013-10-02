@@ -78,7 +78,7 @@ module TweetSearch
     # 
     # Returns an Array.
     def remove_short_words
-      @words = @words.delete_if {|w| w.length < 4}
+      @words = @words.delete_if {|w| w.length < 5}
     end
 
     # Deletes words that contain anything other than letters.
